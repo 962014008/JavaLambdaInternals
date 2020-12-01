@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>java-lambda-internals</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.version>0.1-SNAPSHOT</main.version>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.18.8</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- main start -->
+            <!-- main end -->
+
+            <!-- commons start -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.11</version>
+            </dependency>
+            <!-- commons end -->
+            
+            <!-- other start -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- other end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>test</module>
+    </modules>
+
+    <prerequisites>
+        <maven>3.5.4</maven>
+    </prerequisites>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>8</source>
+                        <target>8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.2.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
