@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  */
 public class CollectorStreamOperation {
 
-    static double PASS_THRESHOLD = 60.0;
+    private static double PASS_THRESHOLD = 60.0;
 
     @Data
     @NoArgsConstructor
@@ -61,6 +61,10 @@ public class CollectorStreamOperation {
         stream = Stream.of("I", "love", "you", "too");
         list = stream.collect(Collectors.toList());
         System.out.println(list);
+        // 1.3直接将Stream规约为数组Object[]
+        Stream<Integer> streamOfInteger = Stream.of(1, 2, 3, 4);
+        Integer[] integerArr = (Integer[]) streamOfInteger.toArray();
+        int[] intArr = streamOfInteger.mapToInt(Integer::intValue).toArray();
 
         // 2.将Stream转换成List或Set
         stream = Stream.of("I", "love", "you", "too");
